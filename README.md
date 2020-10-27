@@ -2,7 +2,8 @@
 
 ## Overview
 
-Our project focus on the iris recognition from an image sequence.
+* Our project focus on the iris recognition from an image sequence. The data we use is CASIA Iris Image Database Version 1.0 (CASIA-IrisV1) which includes 756 iris images from 108 eyes. The whole project follows the steps in paper that written by L. Ma, T. Tan, Y. Wang and D. Zhang, “Personal Identification Based on Iris Texture Analysis”, IEEE Trans. on Pattern Analysis and Machine Intelligence (PAMI), Vol. 25, No. 12, pp.1519-1533, 2003.
+* In our framework, there are total 6 steps to implement the iris recognition, which are Iris Localization, Iris Normalization, Image Enhancement, Feature Extraction, Iris Matching and Performance Envaluation. Each step will be explained in the "File Description" section.
 
 ## Result and Limitation
 
@@ -11,10 +12,12 @@ Our project focus on the iris recognition from an image sequence.
 * Recognition results (CRR) using features of different dimensionality in LDA method.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result.png)
 * We also compare the result with PCA method by taking number of components in [400,550,600,650,1000], which perform better than LDA by the CRR range in 0.89 to 0.90. When choosing the n_components = 1000, we got the best CRR which is 0.904.
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result_pca.png)
 * Limitation: 
-  * Since we only choose the certain dimention in [50,60,70,80,90,100,107] as the samples, we have limit resources to analyze the iris texture information. The result might be better if we increasing the size of sample data.
+  * Since the dataset only contain 108 eyes, we have limit resources to analyze the iris texture information. The result might be better if we increasing the size of sample data.
   * Also we can improve the result by tuning parameter for the PCA and LDA method. For example, choosing different number of components and using cross validation to find the best one.
-
+  * In the function6.1 getCRRCurve(), we only choose the certain dimention in [50,60,70,80,90,100,107] as the samples, which could also be changed into any integer between 1 and 107. By tuning the selected dimensions, we might also improve the result.
+  
 ## File Description
 
 There are total 7 files below.
