@@ -99,14 +99,14 @@ There are total 7 files below.
       - According to the Li Ma's paper, the upper portion of a normalized iris image provides the most useful texture information for recognition.
 
 #### 4.2 Function name: m1
-      
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/m1.png)      
       - Take parameter: x, y, sigmaY
       - Return: Modulating function of the defined filter, corresponding to the function 3 in Li Ma's paper (page 6). Here, the frequency of the sinusoidal function f in the paper, is 1/sigmaY.
       - This funtion will be called in the function g() below.
       - Again, the reason that we use the defined filter is that the horizontal direction in the normalized image contains more information than other directions.
 
 #### 4.3 Function name: g
-
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/g.png)   
       - Take parameter: x, y, siamgeX, sigmaY
       - Return: Kernels function in paper.
       - This funtion will be called in the function getKernel() below. 
