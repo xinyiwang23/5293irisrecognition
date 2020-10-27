@@ -1,15 +1,14 @@
 # 5293irisrecognition
 
-## Table of Contents
-
-
 ## Overview
 
 Our project focus on the iris recognition from an image sequence.
 
 ## Result and Limitation
 
+* The number in the "reduced feature set" column is the result using LDA method.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/IMG_2113.JPG)
+* We also compare the result with PCA method, which perform better than LDA with CRR range in 0.88 to 0.9
 
 ## File Description
 
