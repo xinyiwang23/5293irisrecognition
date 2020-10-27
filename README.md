@@ -9,7 +9,7 @@ Our project focus on the iris recognition from an image sequence.
 * The number in the "reduced feature set" column is the result using LDA method.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/IMG_2113.JPG)
 * Recognition results (CRR) using features of different dimensionality in LDA method.
-1[image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result.png)
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result.png)
 * We also compare the result with PCA method by taking number of components in [400,550,600,650,1000], which perform better than LDA by the CRR range in 0.89 to 0.90. When choosing the n_components = 1000, we got the best CRR which is 0.904.
 * Limitation: 
   * Since we only choose the certain dimention in [50,60,70,80,90,100,107] as the samples, we have limit resources to analyze the iris texture information. The result might be better if we increasing the size of sample data.
