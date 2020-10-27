@@ -9,7 +9,7 @@ Our project focus on the iris recognition from an image sequence.
 
 ## Result and Limitation
 
-
+![image](https://github.com/xinyiwang23/5293irisrecognition/tree/main/image)
 
 ## File Description
 
