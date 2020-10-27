@@ -68,7 +68,7 @@ There are total 7 files below.
 
       - Take parameter: image, degree
       - Return: 
-      - This function takes normalized image and rotate the rectangle image to specified degree.
+      - This function takes normalized image and rotate the rectangle image to specified degree. It will be called in the function5.2 processImageWithRotation() below.
 
 ### 3.Image Enhancement
 
@@ -131,25 +131,61 @@ There are total 7 files below.
        
 ### 5.Iris Matching
 
+* We have the result from the last file that represent the iris image as a feature vector of length 1536. In this section, we first apply Fisher linear discriminant to reduce the dimension of the feature vector, then apply nearest center classifier.
+
 #### 5.1 Function name: processImage
 
       - Take parameter: image file name
-      - Return:
+      - Return: feature vector of length 1536
+      - In this function, we execute the procedure 1 to 4 that we wrote previousely, which are Localization, Normalization, Image Enhancement and Feature Extraction.
+      - This funtion will be called in the function getDatabase() below.
       
 #### 5.2 Function name: processImageWithRotation
 
-      - Take parameter: image file name, degree
-      - Return:
+      - Take parameter: image file name, rotation degree
+      - Return: feature vector of length 1536
+      - This is similar to processImage(), but since we want to define several templates which denotes the rotation angles for each training image, each training image has to be converted into several vector.
+      - This funtion will be called in the function getDatabase() below.
       
 #### 5.3 Function name: getDatabase
 
-      - Take parameter: folder
-      - Return:
+      - Take parameter: database folder (input as a number)
+      - Return: loops through all the files in our database and transfer every image into a vector.
+      - Note, Folder1 contains training image, so we do this with rotation and not doing rotation for Folder2.
       
 #### 5.4 Function name: getMatching
 
-      - Take parameter: train,test,LDADimension,distanceMeasure=3
-      - Return:
+      - Take parameter: train data, test data, number of components for LDA, distanceMeasure is default to 3 (cosine distance)
+      - Return: accuracy rate = correct matching / total
+      - We do LDA for each vector and use l1,l2,and cosine distance by default to calculate the similarity between pictures. Note, distanceMeasure equal to 1 means to calculate the manhattan distance and else for euclidean distance. This function takes training and testing data and output the accuracy rate for our matching.
+      - This funtion will be called in every function in the section Performance Evaluation below.
 
-### Performance Evaluation
+### 6.Performance Evaluation
 
+#### 6.1 Function name: getCRRCurve
+
+      - Take parameter: train data, test data
+      - Return: plots the recognition results using features of different dimensionality
+      
+#### 6.2 Function name: getPCACurve
+
+      - Take parameter: train data, test data
+      - Return: plots the accuracy rate for different dimensions for PCA.
+      - Within each PCA dimension, the maximum accuracy rate was calculated by trying LDA dimensions of 90,100,107 which approves to be the dimensions with highest accuracy rate in general.
+
+#### 6.3 Function name: getTable
+
+      - Take parameter: train data, test data
+      - Return: prints the table of recognition results using different similarity measures
+
+### 7.Iris Recognition
+
+#### 7.1 Function name: getTable
+
+      - Take parameter: 
+      - Return: 
+      
+#### 7.2 Function name: getTable
+
+      - Take parameter: 
+      - Return: 
