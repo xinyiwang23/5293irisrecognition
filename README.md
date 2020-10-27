@@ -4,9 +4,16 @@
 
 
 ## Overview
+
 Our project focus on the iris recognition from an image sequence.
 
+## Result and Limitation
+
+
+
 ## File Description
+
+There are total 7 files below.
 
 ### Iris Localization
 
@@ -110,4 +117,3 @@ The frequency and orientation information can identify the local spatial pattern
 
 ### Performance Evaluation
 
-## Result and Limitation
