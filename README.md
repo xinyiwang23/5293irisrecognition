@@ -152,6 +152,7 @@ There are total 7 files below.
       - Take parameter: database folder (input as a number)
       - Return: loops through all the files in our database and transfer every image into a vector.
       - Note, Folder1 contains training image, so we do this with rotation and not doing rotation for Folder2.
+      - This funtion will be called in the function7.1 runAll() below.
       
 #### 5.4 Function name: getMatching
 
@@ -161,6 +162,8 @@ There are total 7 files below.
       - This funtion will be called in every function in the section Performance Evaluation below.
 
 ### 6.Performance Evaluation
+
+All the functions in this section will be called in the next section Iris Recognition below.
 
 #### 6.1 Function name: getCRRCurve
 
@@ -177,8 +180,11 @@ There are total 7 files below.
 
       - Take parameter: train data, test data
       - Return: prints the table of recognition results using different similarity measures
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/IMG_2113.JPG)
 
 ### 7.Iris Recognition
+
+This section run all the algorithm step by step including Localization, Normalization, Image Enhancement, Feature Extraction, Iris Matching, and Performance Envaluation.
 
 #### 7.1 Function name: getTable
 
