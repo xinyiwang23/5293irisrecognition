@@ -167,7 +167,7 @@ All the functions in this section will be called in the next section Iris Recogn
 #### 6.1 Function name: getCRRCurve
 
       - Take parameter: train data, test data
-      - Return: plots the recognition results using features of different dimensionality
+      - Return: plots the recognition results using features of different dimensionality of the LDA.
       
 #### 6.2 Function name: getPCACurve
 
@@ -183,14 +183,20 @@ All the functions in this section will be called in the next section Iris Recogn
 
 ### 7.Iris Recognition
 
-This section run all the algorithm step by step including Localization, Normalization, Image Enhancement, Feature Extraction, Iris Matching, and Performance Envaluation.
+* This section run all the algorithm step by step including Localization, Normalization, Image Enhancement, Feature Extraction, Iris Matching, and Performance Envaluation.
+* In addition to the LDA plot required by the project, we did PCA for dimension reduction and ploted accuracy curve for different PCA dimensions.
 
-#### 7.1 Function name: getTable
+#### 7.1 Function name: runAll
 
-      - Take parameter: 
-      - Return: 
+* 
+* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, CRR Curve, and recognition results tables.
       
-#### 7.2 Function name: getTable
+#### 7.2 Function name: runAllReduced
 
-      - Take parameter: 
-      - Return: 
+Since the image analysis for all test and train images takes a very long time, we saved the result so the runAllReduced function does not run all the previous steps but directly load the data I saved before which saves a lot of time.
+
+## Peer evaluation form
+
+* Yujing Li (yl4268):
+* Xuan Ren (xr2142):
+* Xinyi Wang (xw2657):
