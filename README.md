@@ -17,8 +17,8 @@ Our project focus on the iris recognition from an image sequence.
        - First Step: Find the center
          We first project the image in the vertical and horizontal direction and get an estimated the center (xp,yp) of the pupil by searching the minimum value of two coordinates (lowest row and column sum). Then binarize a region using a threshhold of 64 to localize the pupil by recalculate the center. 
 
-       -  Second step: Find circles
-          We use Hough transform for detecting the circles for pupil and iris and draw the boundary. Return innerCircle and outterCircle in turple format and both of them contain the x and y coordinate of center and corresponding radius.
+       - Second step: Find circles
+         We use Hough transform for detecting the circles for pupil and iris and draw the boundary. Return innerCircle and outterCircle in turple format and both of them contain the x and y coordinate of center and corresponding radius.
 
 #### 2.Funtion name: irisLocalizationDrawing
 
