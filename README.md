@@ -29,7 +29,7 @@ There are total 7 files below.
 
 #### 2.Funtion name: irisLocalizationDrawing
 
-This function takes the excatly same steps as irisLocalization(). Besides, it also draws the image with two boundaries. Designed for testing, debugging, and visualizing.
+* This function takes the excatly same steps as irisLocalization(). Besides, it also draws the image with two boundaries. Designed for testing, debugging, and visualizing.
       - Take parameter: image file name.
 
 ### Iris Normalization
@@ -47,48 +47,49 @@ This function takes the excatly same steps as irisLocalization(). Besides, it al
       - This funtion will be called in the function getxy() below.
 
 #### 3.Function name: getLongRadius
-This funtion will be called in the function getxy() below for calculating the (xi(theta), yi(theta)), which is the coordinate of the outer boundary point in the direction theta in the original image Io.
+
       - Take parameter: Distance, outterCircle and the result in getInverseTan() in the format (distance, radius, theta)       
       - Return: The radius of the iris, which is longer than the radius of pupil.
+      - This funtion will be called in the function getxy() below for calculating the (xi(theta), yi(theta)), which is the coordinate of the outer boundary point in the direction theta in the original image Io.
 
 #### 4.Function name: getxy
 
-       - Take parameter: X, Y, innerCircle and outterCircle that we get from the function irisLocalization()
-       - Return: (x,y)
-       - In this function, we project the original iris in a Cartesian coordinate system into a doubly dimensionless pseudopolar coordinate by taking the X,Y of the normalized image and finding the corresponding x,y from the round image. This funtion will be called in the function getNormalization() below
+      - Take parameter: X, Y, innerCircle and outterCircle that we get from the function irisLocalization()
+      - Return: (x,y)
+      - In this function, we project the original iris in a Cartesian coordinate system into a doubly dimensionless pseudopolar coordinate by taking the X,Y of the normalized image and finding the corresponding x,y from the round image. This funtion will be called in the function getNormalization() below
 
 #### 5.Function name: getNormalization
 
-       - Take parameter: image,innerCircle,outterCircle
-       - Return: new image 
-       - For each pixel in normalized image, find the value for the corresponding pixels in the original image by calling the function getxy() and fill in the value.
+      - Take parameter: image,innerCircle,outterCircle
+      - Return: new image 
+      - For each pixel in normalized image, find the value for the corresponding pixels in the original image by calling the function getxy() and fill in the value.
 
 #### 6.Function name: getRotation ?????
 
-       - Take parameter: image, degree
-       - Return: 
-       - This function takes normalized image and rotate the rectangle image to specified degree.
+      - Take parameter: image, degree
+      - Return: 
+      - This function takes normalized image and rotate the rectangle image to specified degree.
 
 ### Image Enhancement
 
 #### 1.Function name: enhancement
 
-       - Take parameter: image
-       - Return: enhanced image by equalizing the histogram of the image.
+      - Take parameter: image
+      - Return: enhanced image by equalizing the histogram of the image.
 
 #### 2.Function name: imageEnhancementByParts
 
-       - Take parameter: image
-       - Return: enhanced image using histogram equalization by 32x32 pixels region.
+      - Take parameter: image
+      - Return: enhanced image using histogram equalization by 32x32 pixels region.
 
 #### 3.Function name: allEnhancement ?????
 
-       - Take parameter: image
-       - Return:
+      - Take parameter: image
+      - Return:
 
 ### Feature Extraction
 
-The frequency and orientation information can identify the local spatial patterns of different irises in the texture analysis. Since we normalize the image before, the orientation information among irises will not be the major differences of irises. So in this section, we focus on the frequency information.
+* The frequency and orientation information can identify the local spatial patterns of different irises in the texture analysis. Since we normalize the image before, the orientation information among irises will not be the major differences of irises. So in this section, we focus on the frequency information.
 
 #### 1.Function name: roi
 
