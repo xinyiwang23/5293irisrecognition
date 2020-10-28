@@ -28,20 +28,22 @@ There are total 7 files below.
   We first project the image in the vertical and horizontal direction and get an estimated the center (xp,yp) of the pupil by searching the minimum value of two coordinates (lowest row and column sum). Then binarize a region using a threshhold of 64 to localize the pupil by recalculate the center. 
 
 * Second step: Find circles
-  We use Hough transform for detecting the circles for pupil and iris and draw the boundary. Return innerCircle and outterCircle in turple format and both of them contain the x and y coordinate of center and corresponding radius.
+  We use Hough transform for detecting the circles for pupil and iris and draw the boundary.
 
 #### 1.1 Function name: irisLocalization
 
       - Take parameter: color image.
-      - Return: 
-      
+      - Return: innerCircle and outerCircle in turple format and both of them contain the x and y coordinate of center and corresponding radius.
 
 #### 1.2 Funtion name: irisLocalizationDrawing
 
-* This function takes the excatly same steps as irisLocalization(). Besides, it also draws the image with two boundaries. Designed for testing, debugging, and visualizing.
-* Take parameter: image file name.
+      - This function takes the excatly same steps as irisLocalization(). Besides, it also draws the image with two boundaries. Designed for testing, debugging, and visualizing.
+      - Take parameter: image file name.
+      - Return: Same as above
 
 ### 2.Iris Normalization
+
+This section implement the functions of the normalizition part in paper.
 
 #### 2.1 Function name: getDistance
 
@@ -57,26 +59,25 @@ There are total 7 files below.
 
 #### 2.3 Function name: getLongRadius
 
-      - Take parameter: Distance, outterCircle and the result in getInverseTan() in the format (distance, radius, theta)       
+      - Take parameter: Distance, outerCircle and the result in getInverseTan() in the format (distance, radius, theta)       
       - Return: The radius of the iris, which is longer than the radius of pupil.
       - This funtion will be called in the function getxy() below for calculating the (xi(theta), yi(theta)), which is the coordinate of the outer boundary point in the direction theta in the original image Io.
 
 #### 2.4 Function name: getxy
 
-      - Take parameter: X, Y, innerCircle and outterCircle that we get from the function irisLocalization()
+      - Take parameter: X, Y, innerCircle and outerCircle that we get from the function irisLocalization()
       - Return: (x,y)
       - In this function, we project the original iris in a Cartesian coordinate system into a doubly dimensionless pseudopolar coordinate by taking the X,Y of the normalized image and finding the corresponding x,y from the round image. This funtion will be called in the function getNormalization() below
 
 #### 2.5 Function name: getNormalization
 
-      - Take parameter: image,innerCircle,outterCircle
+      - Take parameter: image,innerCircle,outerCircle
       - Return: new image 
       - For each pixel in normalized image, find the value for the corresponding pixels in the original image by calling the function getxy() and fill in the value.
 
-#### 2.6 Function name: getRotation ?????(return出来的是什么
+#### 2.6 Function name: getRotation
 
       - Take parameter: image, degree
-      - Return: 
       - This function takes normalized image and rotate the rectangle image to specified degree. It will be called in the function5.2 processImageWithRotation() below.
 
 ### 3.Image Enhancement
@@ -90,11 +91,6 @@ There are total 7 files below.
 
       - Take parameter: image
       - Return: enhanced image using histogram equalization by 32x32 pixels region.
-
-#### 3.3 Function name: allEnhancement ?????(和上一个function有什么区别？
-
-      - Take parameter: image
-      - Return:
 
 ### 4.Feature Extraction
 
