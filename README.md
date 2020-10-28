@@ -96,7 +96,7 @@ This section implement the functions of the normalizition part in paper.
 
 * The frequency and orientation information can identify the local spatial patterns of different irises in the texture analysis. Since we normalize the image before, the orientation information among irises will not be the major differences of irises. So in this section, we focus on the frequency information to extract features using even-symmetric Gabor filters from the enhanced image part.
 
-#### 4.1 Function name: roi
+#### 4.1 Function name: region_interested
 
       - Take parameter: image
       - Return: Top 48 rows of the image which is the Region of Interest
@@ -112,21 +112,21 @@ This section implement the functions of the normalizition part in paper.
 
 #### 4.3 Function name: g
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/g.png)   
-      - Take parameter: x, y, siamgeX, sigmaY
+      - Take parameter: x, y, siamgX, sigmaY
       - Return: Kernels function in paper.
       - This funtion will be called in the function getKernel() below. 
       - Note, siamgeX and sigmaY are the space constants of the Gaussian envelope along the x and y axis. According to the paper, siamgeX and sigmaY for the first channel are 3 and 1.5, and 4.5 and 1.5 for the second channel.
 
 #### 4.4 Function name: getKernel
 
-      - Take parameter: siamgeX, sigmaY
-      - Return: Calculates the Gabor Filter with specified siamgeX,sigmaY
+      - Take parameter: siamgX, sigmaY
+      - Return: Calculates the Gabor Filter with specified siamgX,sigmaY
       - This funtion will be called in the function getFilteredImage() below.
 
 #### 4.5 Function name: getFilteredImage
 
       - Take parameter: image, sigmaX, sigmaY
-      - Return: calculates the convolve of image and filter
+      - Return: calculates the convolution of image and filter
 
 #### 4.6 Function name: getFeatureVector
 
@@ -168,7 +168,7 @@ This section implement the functions of the normalizition part in paper.
 
 ### 6.Performance Evaluation
 
-All the functions in this section will be called in the next section Iris Recognition below.
+* All the functions in this section will be called in the next section Iris Recognition below. Then we evalute the perform of the model and transform the result into CRR curve and table as paper's table3 & Fig10.
 
 #### 6.1 Function name: getCRRCurve
 
@@ -194,8 +194,8 @@ All the functions in this section will be called in the next section Iris Recogn
 
 #### 7.1 Function name: runAll
 
-* 
-* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, CRR Curve, and recognition results tables.
+* First Step is data transformation.
+* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, ROC Curve, and recognition results tables.
       
 #### 7.2 Function name: runAllReduced
 
