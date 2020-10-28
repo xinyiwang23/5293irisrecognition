@@ -82,7 +82,7 @@ There are total 7 files below.
 
 ### 3.Image Enhancement
 
-* From last section, since we normalized the image, so the new image may not have high contrast. Therefore, in this section, we enhance the image by dividing them to small blocks
+* From last section, since we normalized the image, so the new image may not have high contrast. Therefore, in this section, we enhance the image by dividing them to small blocks with size 16x16 and calculate the mean of them to estimate the background illumination. Then we apply histogram equalization to enhance the image.
 
 #### 3.1 Function name: enhancement
 
@@ -197,7 +197,7 @@ There are total 7 files below.
 #### 7.1 Function name: runAll
 
 * First Step is data transformation.
-* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, ROC Curve - which the y axis represent the CRR, and recognition results tables.
+* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, CRR Curve, and recognition results tables.
       
 #### 7.2 Function name: runAllReduced
 
@@ -205,6 +205,6 @@ Since the image analysis for all test and train images takes a very long time, w
 
 ## Peer evaluation form
 
-* Yujing Li (yl4268):
-* Xuan Ren (xr2142):
-* Xinyi Wang (xw2657):
+* Yujing Li (yl4268): Iris Localization, Iris Normalization, Image Enhancement, Feature Extraction
+* Xuan Ren (xr2142): Iris Matching, Performance Envaluation, Iris Recognition
+* Xinyi Wang (xw2657): Iris Matching, Readme file
