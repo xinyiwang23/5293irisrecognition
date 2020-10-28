@@ -24,10 +24,10 @@ There are total 7 files below.
 
 ### 1.Iris Localization
 
-* First Step: Find the center
+* First Step: Find the center<br>
   We first project the image in the vertical and horizontal direction and get an estimated the center (xp,yp) of the pupil by searching the minimum value of two coordinates (lowest row and column sum). Then binarize a region using a threshhold of 64 to localize the pupil by recalculate the center. 
 
-* Second step: Find circles
+* Second step: Find circles<br>
   We use Hough transform for detecting the circles for pupil and iris and draw the boundary.
 
 #### 1.1 Function name: irisLocalization
