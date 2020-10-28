@@ -43,7 +43,7 @@ There are total 7 files below.
 
 ### 2.Iris Normalization
 
-This section implement the functions of the normalizition part in paper.
+* This section implement the functions of the normalizition part in paper.
 
 #### 2.1 Function name: getDistance
 
@@ -81,6 +81,8 @@ This section implement the functions of the normalizition part in paper.
       - This function takes normalized image and rotate the rectangle image to specified degree. It will be called in the function5.2 processImageWithRotation() below.
 
 ### 3.Image Enhancement
+
+*
 
 #### 3.1 Function name: enhancement
 
@@ -195,7 +197,7 @@ This section implement the functions of the normalizition part in paper.
 #### 7.1 Function name: runAll
 
 * First Step is data transformation.
-* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, ROC Curve, and recognition results tables.
+* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, ROC Curve - which the y axis represent the CRR, and recognition results tables.
       
 #### 7.2 Function name: runAllReduced
 
