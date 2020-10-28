@@ -82,7 +82,7 @@ There are total 7 files below.
 
 ### 3.Image Enhancement
 
-*
+* From last section, since we normalized the image, so the new image may not have high contrast. Therefore, in this section, we enhance the image by dividing them to small blocks
 
 #### 3.1 Function name: enhancement
 
