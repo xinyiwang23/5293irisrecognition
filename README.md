@@ -75,10 +75,6 @@ There are total 7 files below.
       - Return: new image 
       - For each pixel in normalized image, find the value for the corresponding pixels in the original image by calling the function getxy() and fill in the value.
 
-#### 2.6 Function name: getRotation
-
-      - Take parameter: image, degree
-      - This function takes normalized image and rotate the rectangle image to specified degree. It will be called in the function5.2 processImageWithRotation() below.
 
 ### 3.Image Enhancement
 
@@ -139,61 +135,55 @@ There are total 7 files below.
 ### 5.Iris Matching
 
 * We have the result from the last file that represent the iris image as a feature vector of length 1536. In this section, we first apply Fisher linear discriminant to reduce the dimension of the feature vector, then apply nearest center classifier.
-
-#### 5.1 Function name: processImage
-
-      - Take parameter: image file name
-      - Return: feature vector of length 1536
-      - In this function, we execute the procedure 1 to 4 that we wrote previousely, which are Localization, Normalization, Image Enhancement and Feature Extraction.
-      - This funtion will be called in the function getDatabase() below.
       
-#### 5.2 Function name: processImageWithRotation
+#### Function name: getMatching
 
-      - Take parameter: image file name, rotation degree
-      - Return: feature vector of length 1536
-      - This is similar to processImage(), but since we want to define several templates which denotes the rotation angles for each training image, each training image has to be converted into several vector.
-      - This funtion will be called in the function getDatabase() below.
-      
-#### 5.3 Function name: getDatabase
-
-      - Take parameter: database folder (input as a number)
-      - Return: loops through all the files in our database and transfer every image into a vector.
-      - Note, Folder1 contains training image, so we do this with rotation and not doing rotation for Folder2.
-      - This funtion will be called in the function7.1 runAll() below.
-      
-#### 5.4 Function name: getMatching
-
-      - Take parameter: train data, test data, number of components for LDA, distanceMeasure is default to 3 (cosine distance)
-      - Return: accuracy rate = correct matching / total
-      - We do LDA for each vector and use l1,l2,and cosine distance by default to calculate the similarity between pictures. Note, distanceMeasure equal to 1 means to calculate the manhattan distance and else for euclidean distance. This function takes training and testing data and output the accuracy rate for our matching.
+      - Take parameter: train data, test data, number of components for LDA, distanceMeasure is default to 1 (cosine distance)
+      - Return: accuracy rate = correct matching / total, predicted result and cosine distance
+      - We do LDA for each vector and use l1,l2,and cosine distance by default to calculate the similarity between pictures. Note, distanceMeasure equal to 2 means to calculate the manhattan distance and else for euclidean distance. This function takes training and testing data and output the accuracy rate for our matching.
       - This funtion will be called in every function in the section Performance Evaluation below.
 
 ### 6.Performance Evaluation
 
-* All the functions in this section will be called in the next section Iris Recognition below. Then we evalute the perform of the model and transform the result into CRR curve and table as paper's table3 & Fig10.
+* All the functions in this section will be called in the next section Iris Recognition below. We evalute the perform of the model and transform the result into CRR curve and table as paper's table3 & Fig10. Also, we calculate the ROC curve which is False Match Rate (FMR) versus False NonMatch Rate (FNMR) curve and return the corresponding table.
 
 #### 6.1 Function name: getCRRCurve
 
       - Take parameter: train data, test data
       - Return: plots the recognition results using features of different dimensionality of the LDA.
-      
-#### 6.2 Function name: getPCACurve
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result.png) 
+
+#### 6.2 Function name: getTable
+
+      - Take parameter: train data, test data
+      - Return: prints the table of recognition results using different similarity measures
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/IMG_2113.JPG)      
+
+#### 6.3 Function name: getPCACurve
 
       - Take parameter: train data, test data
       - Return: plots the accuracy rate for different dimensions for PCA.
       - Within each PCA dimension, the maximum accuracy rate was calculated by trying LDA dimensions of 90,100,107 which approves to be the dimensions with highest accuracy rate in general.
-
-#### 6.3 Function name: getTable
-
-      - Take parameter: train data, test data
-      - Return: prints the table of recognition results using different similarity measures
-![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/IMG_2113.JPG)
 
 ### 7.Iris Recognition
 
 * This section run all the algorithm step by step including Localization, Normalization, Image Enhancement, Feature Extraction, Iris Matching, and Performance Envaluation.
 * In addition to the LDA plot required by the project, we did PCA for dimension reduction and ploted accuracy curve for different PCA dimensions.
 
+#### 7.1 Function name: processImage
+
+      - Take parameter: image file name, rotation degree(if needed)
+      - Return: feature vector of length 1536
+      - In this function, we execute the procedure 1 to 4 that we wrote previousely, which are Localization, Normalization, Image Enhancement and Feature Extraction.
+      - Since the paper need to obtain approximate rotation invariance, we unwrap the iris ring at different rotation angles to each traing image.
+      - This funtion will be called in the function getDatabase() below.     
+      
+#### 7.2 Function name: getDatabase
+
+      - Take parameter: database folder (input as a number)
+      - Return: loops through all the files in our database and transfer every image into a vector.
+      - Note, Folder1 contains training image, so we do this with rotation and not doing rotation for Folder2.
+      - This funtion will be called in the function7.1 runAll() below.
 #### 7.1 Function name: runAll
 
 * First Step is data transformation.
@@ -206,5 +196,5 @@ Since the image analysis for all test and train images takes a very long time, w
 ## Peer evaluation form
 
 * Yujing Li (yl4268): Iris Localization, Iris Normalization, Image Enhancement, Feature Extraction
-* Xuan Ren (xr2142): Iris Matching, Performance Envaluation, Iris Recognition
-* Xinyi Wang (xw2657): Iris Matching, Readme file
+* Xuan Ren (xr2142): Iris Normalization, Feature Extraction, Performance Evaluation
+* Xinyi Wang (xw2657): Iris Matching, Performance Evaluation, Iris Recognition, Readme file
