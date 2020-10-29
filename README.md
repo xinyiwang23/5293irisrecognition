@@ -169,6 +169,19 @@ There are total 7 files below.
       - Take parameter: train data, test data
       - Return: plots the accuracy rate for different dimensions for PCA.
       - Within each PCA dimension, the maximum accuracy rate was calculated by trying LDA dimensions of 90,100,107 which approves to be the dimensions with highest accuracy rate in general.
+      
+#### 6.4 Function name: metrics_calculator
+
+      - Take parameter: predicted result, cosine distance that obtained from function5 and the threashold that we need to using for calculate FMR, FNMR
+      - Return: false match rate, false non match rate.
+      - This funtion will be called in the function getROCCurve() below.   
+      
+#### 6.5 Function name: getROCCurve
+
+      - Take parameter: train data, test data
+      - Return: plots the ROC table and figure.
+      - The threashold choosing here is from 0.1 to 0.7.
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/ROC.png)
 
 ### 7.Iris Recognition
 
@@ -186,17 +199,18 @@ There are total 7 files below.
 #### 7.2 Function name: getDatabase
 
       - Take parameter: database folder (input as a number)
-      - Return: loops through all the files in our database and transfer every image into a vector.
+      - Return: loops through all the files in our database and transfer every image into vectors.
       - Note, Folder1 contains training image, so we do this with rotation and not doing rotation for Folder2.
-      - This funtion will be called in the function7.1 runAll() below.
-#### 7.1 Function name: runAll
+      - This funtion will be called in the function main() below.
 
-* First Step is data transformation.
-* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for different PCA dimension reduction, CRR Curve, and recognition results tables.
+#### 7.3 Function name: main
+
+* First Step is data transformation. 
+* After transfering the image into vector, get performance envaluation by calculating Acuracy curve for CRR Curve, recognition results tables, different PCA dimension reduction, ROC curve and table.
       
-#### 7.2 Function name: runAllReduced
+#### 7.4 Function name: reduce
 
-Since the image analysis for all test and train images takes a very long time, we saved the result so the runAllReduced function does not run all the previous steps but directly load the data I saved before which saves a lot of time.
+* Since the image analysis for all test and train images takes a very long time, we saved the result so the reduce function does not run all the previous steps but directly load the data I saved before which saves a lot of time.
 
 ## Peer evaluation form
 
