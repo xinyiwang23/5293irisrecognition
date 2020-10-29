@@ -15,7 +15,7 @@
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result_pca.PNG)
 * The Receiver Operating Characteristic (ROC) curve is False Match Rate (FMR) versus False NonMatch Rate (FNMR) curve, which measures the accuracy of matching process and shows the overall performance of an algorithm. Refer to the Fig13 in paper.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/ROC.png)
-* Refer to the table4 in paper.
+* Refer to the table4 in paper.<br>
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/fmr_fnmr.png)
 
 * Limitation: 
