@@ -7,12 +7,17 @@
 
 ## Result and Limitation
 
-* The number in the "reduced feature set" column is the result using LDA method.
+* The number in the "reduced feature set" column is the result using LDA method. Refer to the table3 in paper.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/IMG_2113.JPG)
-* Recognition results (CRR) using features of different dimensionality in LDA method.
+* Recognition results (CRR) using features of different dimensionality in LDA method. Refer to the Fig10 in paper.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result.png)
 * We also compare the result with PCA method by taking number of components in [400,550,600,650,1000], which perform better than LDA by the CRR range in 0.89 to 0.90. When choosing the n_components = 1000, we got the best CRR which is 0.904.
-![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result_pca.png)
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result_pca.PNG)
+* The Receiver Operating Characteristic (ROC) curve is False Match Rate (FMR) versus False NonMatch Rate (FNMR) curve, which measures the accuracy of matching process and shows the overall performance of an algorithm. Refer to the Fig13 in paper.
+![image]()
+* Refer to the table4 in paper.
+![image]()
+
 * Limitation: 
   * Since the dataset only contain 108 eyes, we have limit resources to analyze the iris texture information. The result might be better if we increasing the size of sample data.
   * Also we can improve the result by tuning parameter for the PCA and LDA method. For example, choosing different number of components and using cross validation to find the best one.
