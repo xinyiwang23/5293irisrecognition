@@ -214,6 +214,6 @@ There are total 7 files below.
 
 ## Peer evaluation form
 
-* Yujing Li (yl4268): Iris Localization, Iris Normalization, Image Enhancement, Feature Extraction
-* Xuan Ren (xr2142): Iris Normalization, Feature Extraction, Performance Evaluation
-* Xinyi Wang (xw2657): Iris Matching, Performance Evaluation, Iris Recognition, Readme file
+* Yujing Li (yl4268): Iris Localization, Iris Normalization, Image Enhancement
+* Xuan Ren (xr2142): Feature Extraction, Iris Matching， Performance Evaluation
+* Xinyi Wang (xw2657): Performance Evaluation, Iris Recognition, Readme file
