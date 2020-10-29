@@ -14,9 +14,9 @@
 * We also compare the result with PCA method by taking number of components in [400,550,600,650,1000], which perform better than LDA by the CRR range in 0.89 to 0.90. When choosing the n_components = 1000, we got the best CRR which is 0.904.
 ![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/result_pca.PNG)
 * The Receiver Operating Characteristic (ROC) curve is False Match Rate (FMR) versus False NonMatch Rate (FNMR) curve, which measures the accuracy of matching process and shows the overall performance of an algorithm. Refer to the Fig13 in paper.
-![image]()
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/ROC.png)
 * Refer to the table4 in paper.
-![image]()
+![image](https://github.com/xinyiwang23/5293irisrecognition/blob/main/image/fmr_fnmr.png)
 
 * Limitation: 
   * Since the dataset only contain 108 eyes, we have limit resources to analyze the iris texture information. The result might be better if we increasing the size of sample data.
